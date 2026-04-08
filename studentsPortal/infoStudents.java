@@ -45,9 +45,22 @@ public class infoStudents extends Students {
       year = s.nextInt();
    }
    
+   public void privInfo(){
+      System.out.print("Age: ");
+      setAge(s.nextInt());
+      if (getAge() > 100 || getAge() <= 0) {
+        System.out.println("Error: Invalid age. Please enter 1-100.");
+        privateInfo(); 
+    }
+   }
+
    public void privateInfo(){
       System.out.print("Age: ");
       setAge(s.nextInt());
+      if (getAge() > 100 || getAge() <= 0) {
+        System.out.println("Error: Invalid age. Please enter 1-100.");
+        privInfo(); 
+    }
       s.nextLine();
       System.out.print("House Number: ");
       setHouseNum(s.nextInt());
@@ -55,7 +68,6 @@ public class infoStudents extends Students {
       System.out.print("Address: ");
       setAddress(s.nextLine());
       System.out.println("-----------------------------");
-   
    }
    
    void print(){
@@ -72,23 +84,21 @@ public class infoStudents extends Students {
    
    void allInfo(){
       print();
-      privatePrint();
    }
    
    void search(infoStudents[] students) {
     System.out.print("Search student (First Name): ");
     String hanap = s.nextLine();
+    System.out.println("-----------------------------");
 
     for (infoStudents st : students) {
         if (hanap.equalsIgnoreCase(st.fName)) {
-            st.allInfo();   // ipakita lahat ng info ng student na nahanap
+            st.allInfo();   
             found = true;
         }
     }
-
     if (!found) {
         System.out.println("Student not found.");
     }
-}
-
+  }
 }

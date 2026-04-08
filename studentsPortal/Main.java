@@ -2,7 +2,7 @@ public class Main {
    public static void main(String []args){
       
       
-      infoStudents[] students = new infoStudents[3];
+      infoStudents[] students = new infoStudents[1];
       
       
       for (int i = 0; i < students.length; i++) {
