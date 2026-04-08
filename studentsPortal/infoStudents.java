@@ -67,6 +67,15 @@ public class infoStudents extends Students {
       s.nextLine();
       System.out.print("Address: ");
       setAddress(s.nextLine());
+      System.out.print("Grade 1(ITPE3): ");
+      setgr1(s.nextDouble());
+      s.nextLine();
+      System.out.print("Grade 2(ITPE4): ");
+      setgr2(s.nextDouble());
+      s.nextLine();
+      System.out.print("Grade 3(CP1): ");
+      setgr3(s.nextDouble());
+      s.nextLine();
       System.out.println("-----------------------------");
    }
    
@@ -79,11 +88,13 @@ public class infoStudents extends Students {
    
    void privatePrint(){
       System.out.println("Age: " + getAge());
-      System.out.println("Address: " + getHouseNum() + " " + getAddress());  
+      System.out.println("Address: " + getHouseNum() + " " + getAddress()); 
+      System.out.println("GWA:" + getGWA()); 
    }
    
    void allInfo(){
       print();
+      privatePrint();
    }
    
    void search(infoStudents[] students) {
@@ -101,4 +112,6 @@ public class infoStudents extends Students {
         System.out.println("Student not found.");
     }
   }
+  
+
 }
